@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>校友会管理</title>
+		<link rel="stylesheet" type="text/css" href="../../easyui/1.3.4/themes/default/easyui.css">
+		<link rel="stylesheet" type="text/css" href="../../easyui/1.3.4/themes/icon.css">
+		<script type="text/javascript" src="../../easyui/1.3.4/jquery.min.js"></script>
+		<script type="text/javascript" src="../../easyui/1.3.4/jquery.easyui.min.js"></script>
+		<script type="text/javascript" src="../../easyui/1.3.4/easyloader.js"></script>
+		<script type="text/javascript" src="../../easyui/1.3.4/locale/easyui-lang-zh_CN.js"></script>
+	</head>
+
+	<body>
+		<table id="dg" class="easyui-datagrid" style="width:auto;height:auto" iconCls="icon-save" rownumbers="false" autoRowHeight="false" pagination="true" striped="true" pageSize="10" singleSelect="true">
+			<thead>
+				<tr>
+					<th data-options="field:'alumniAssociation_name',width:200">校友会名称</th>
+					<th data-options="field:'alumniAssociation_president',width:80">会长</th>
+					<th data-options="field:'alumniAssociation_secretary',width:80">秘书</th>
+					<th data-options="field:'alumniAssociation_relations',width:80">外事公关</th>
+					<th data-options="field:'alumniAssociation_finance',width:80">财务</th>
+					<th data-options="field:'alumniAssociation_general',width:80">总务</th>
+					<th data-options="field:'userdate',width:100">操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>西北工业大学校友总会</td>
+					<td>侯楠</td>
+					<td>高瑞春</td>
+					<td>余先宝</td>
+					<td>陈品超</td>
+					<td>佘明亮</td>
+					<td>
+						<a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="chageAlumniAssociationInfo()">修改</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<!--
+            	作者：offline
+            	时间：2017-10-31
+            	描述：修改信息
+            -->
+		<div id="chageAlumniAssociationInfo" class="easyui-dialog" title="修改信息" style="width:500px;height:230px;padding:20px 20px;" closed="true" buttons="#chageAlumniAssociationInfoButton">
+			<form id="from1" action="" method="">
+
+				<table cellspacing="20" style="font-size: 15px; font-weight: bold;">
+					<tr>
+						<td>请选择修改职位:</td>
+						<td>
+							<select id="alumni_year" class="easyui-combobox" name="register_id" style="width:200px;height:auto" data-options="editable:false">
+								<option>会长</option>
+								<option>秘书</option>
+								<option>外事公关</option>
+								<option>财务</option>
+								<option>总务</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>姓名:</td>
+						<td><input id="alumni_name" name="alumni_name" class="easyui-textbox" style="width:200px;height:auto"></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		<div id="chageAlumniAssociationInfoButton" style="text-align: center;">
+			<a href="#" class="easyui-linkbutton" iconCls="icon-ok" onclick="submitChageAlumniAssociationInfo()">保存</a>
+			<a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#chageAlumniAssociationInfo').dialog('close')">取消</a>
+		</div>
+
+		<script>
+			//修改信息
+			function chageAlumniAssociationInfo() {
+				var row = $('#dg').datagrid('getSelected');
+				if($("#alumni_year").combobox("getValue")=='会长'){
+					
+					
+					
+					
+				}
+				$('#chageAlumniAssociationInfo').dialog('open');
+				showModalMask('.modal-mask');
+				$('#chageAlumniAssociationInfo').window('center');
+			}
+			//修改信息提交
+			function submitChageAlumniAssociationInfo() {
+				$.messager.alert("提示", "修改成功！", "info", function() {
+					$('#chageAlumniAssociationInfo').dialog('close');
+				});
+			};
+		</script>
+	</body>
+
+</html>

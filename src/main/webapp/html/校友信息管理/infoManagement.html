@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>校友信息管理</title>
+		<link rel="stylesheet" type="text/css" href="../../easyui/1.3.4/themes/default/easyui.css">
+		<link rel="stylesheet" type="text/css" href="../../easyui/1.3.4/themes/icon.css">
+		<script type="text/javascript" src="../../easyui/1.3.4/jquery.min.js"></script>
+		<script type="text/javascript" src="../../easyui/1.3.4/jquery.easyui.min.js"></script>
+		<script type="text/javascript" src="../../easyui/1.3.4/easyloader.js"></script>
+		<script type="text/javascript" src="../../easyui/1.3.4/locale/easyui-lang-zh_CN.js"></script>
+	</head>
+
+	<body>
+		<table id="dg" class="easyui-datagrid" style="width:auto;height:auto" iconCls="icon-save" rownumbers="false" autoRowHeight="false" pagination="true" toolbar="#tb3" striped="true" pageSize="10" singleSelect="true">
+			<thead>
+				<tr>
+					<th data-options="field:'alumni_name',width:60">姓名</th>
+					<th data-options="field:'alumni_year',width:60">入学年份</th>
+					<th data-options="field:'alumni_major',width:80">院系专业</th>
+					<th data-options="field:'alumni_tablename',width:80">同班同学姓名</th>
+					<th data-options="field:'alumni_phone',width:120">联系电话</th>
+					<th data-options="field:'alumni_address',width:120">住址</th>
+					<th data-options="field:'alumni_email',width:160">邮箱</th>
+					<th data-options="field:'alumni_school',width:60">学校</th>
+					<th data-options="field:'alumni_education',width:60">学历</th>
+					<th data-options="field:'alumni_profession',width:120">行业</th>
+					<th data-options="field:'alumni_register',width:180">注册时间</th>
+					<th data-options="field:'userdate',width:200">操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>侯楠</td>
+					<td>2004</td>
+					<td>汽车工程</td>
+					<td>侯北</td>
+					<td>13525456569</td>
+					<td>陕西省西安市侯家湾</td>
+					<td>888888888@gmail.com</td>
+					<td>北京大学</td>
+					<td>博士</td>
+					<td>收破烂</td>
+					<td>2017/10/23 下午05:33:00</td>
+					<td>
+						<a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="chageInfo()">修改</a>
+						<a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="deleteInfo()">删除</a>
+					</td>
+				</tr>
+				<tr>
+					<td>李楠</td>
+					<td>2009</td>
+					<td>计算机</td>
+					<td>侯西</td>
+					<td>13525456569</td>
+					<td>陕西省西安市侯家湾五组250号</td>
+					<td>2325188888@gmail.com</td>
+					<td>北京大学</td>
+					<td>硕士</td>
+					<td>拉大粪</td>
+					<td>2017/10/23 下午05:33:00</td>
+					<td>
+						<a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="chageInfo()">修改</a>
+						<a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="deleteInfo()">删除</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div id="tb3" style="padding:2px;">
+			请输入校友名称:
+			<input class="easyui-textbox" style="width:200px;height:auto">
+			<a href="#" class="easyui-linkbutton" iconCls="icon-search">查询</a>
+		</div>
+
+		<!--
+            	作者：offline
+            	时间：2017-10-31
+            	描述：修改信息
+            -->
+		<div id="chageInfo" class="easyui-dialog" title="修改信息" style="width:500px;height:600px;padding:30px 60px;" closed="true" buttons="#chageInfoButton">
+			<form id="from1" action="" method="">
+
+				<table cellspacing="20" style="font-size: 15px; font-weight: bold;">
+					<tr>
+						<td>姓名:</td>
+						<td><input id="alumni_name" name="alumni_name" class="easyui-textbox" style="width:200px;height:auto"></td>
+					</tr>
+					<tr>
+						<td>入学年份:</td>
+						<td>
+							<select id="alumni_year" class="easyui-combobox" name="register_id" style="width:200px;height:auto" data-options="editable:false">
+								<option value="aa">2017</option>
+								<option>2016</option>
+								<option>2015</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>院系专业:</td>
+						<td>
+							<select id="alumni_major" class="easyui-combobox" name="register_id" style="width:200px;height:auto" data-options="editable:false">
+								<option value="aa">科技信息学院</option>
+								<option>农业学院</option>
+								<option>航天学院</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>同班同学姓名:</td>
+						<td><input id="alumni_tablename" class="easyui-textbox" style="width:200px;height:auto"></td>
+					</tr>
+					<tr>
+						<td>联系电话:</td>
+						<td><input id="alumni_phone" class="easyui-textbox" style="width:200px;height:auto"></td>
+					</tr>
+					<tr>
+						<td>地址:</td>
+						<td><input id="alumni_address" class="easyui-textbox" style="width:200px;height:auto"></td>
+					</tr>
+					<tr>
+						<td>邮箱:</td>
+						<td><input id="alumni_email" class="easyui-textbox" style="width:200px;height:auto"></td>
+					</tr>
+					<tr>
+						<td>学校:</td>
+						<td><input id="alumni_school" class="easyui-textbox" style="width:200px;height:auto"></td>
+					</tr>
+					<tr>
+						<td>学历:</td>
+						<td><input id="alumni_education" class="easyui-textbox" style="width:200px;height:auto"></td>
+					</tr>
+					<tr>
+						<td>行业:</td>
+						<td><input id="alumni_profession" class="easyui-textbox" style="width:200px;height:auto"></td>
+					</tr>
+				</table>
+
+			</form>
+		</div>
+		<div id="chageInfoButton" style="text-align: center;">
+			<a href="#" class="easyui-linkbutton" iconCls="icon-ok" onclick="submitChageInfo()">保存</a>
+			<a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#chageInfo').dialog('close')">取消</a>
+		</div>
+
+		<script>
+			//修改信息
+			function chageInfo() {
+				var row = $('#dg').datagrid('getSelected');
+				var alumni_name = row.alumni_name;
+				var alumni_year = row.alumni_year;
+				var alumni_major = row.alumni_major;
+				var alumni_tablename = row.alumni_tablename;
+				var alumni_phone = row.alumni_phone;
+				var alumni_address = row.alumni_address;
+				var alumni_email = row.alumni_email;
+				var alumni_school = row.alumni_school;
+				var alumni_education = row.alumni_education;
+				var alumni_profession = row.alumni_profession;
+				//				$('#chageInfo').dialog('open').dialog('setTitle', '修改信息');
+				$('#chageInfo').dialog({
+					onOpen: function() {
+						//AAA参数可以为外界变量
+						$('#alumni_name').val(alumni_name);
+						$('#alumni_year').val(alumni_year);
+						$('#alumni_major').val(alumni_major);
+						$('#alumni_tablename').val(alumni_tablename);
+						$('#alumni_phone').val(alumni_phone);
+						$('#alumni_address').val(alumni_address);
+						$('#alumni_email').val(alumni_email);
+						$('#alumni_school').val(alumni_school);
+						$('#alumni_education').val(alumni_education);
+						$('#alumni_profession').val(alumni_profession);
+					}
+					//也可以在此处设定初始值，而免于在html中设定了
+					//title: 'My Dialog',
+					//width: 400,
+					//height: 200,
+					//closed: false,
+					//cache: false,
+					//href: 'get_content.php',
+					//modal: true
+				});
+				$('#chageInfo').dialog('open');
+				showModalMask('.modal-mask');
+				$('#chageInfo').window('center');
+			}
+			//修改信息提交
+			function submitChageInfo() {
+				$.messager.alert("提示", "修改成功！", "info", function() {
+					$('#chageInfo').dialog('close');
+				});
+			};
+			//删除按钮
+			function deleteInfo() {
+				var row = $('#dg').datagrid('getSelected');
+				var alumni_name = row.alumni_name;
+				$.messager.confirm('提示', '您确定要删除' + alumni_name + '的信息吗?', function(r) {
+					if(r) {
+						var rowIndex = $('#dg').datagrid('getRowIndex', row);
+						$('#dg').datagrid('deleteRow', rowIndex);
+						$.messager.alert('提示', '删除成功! ', "info");
+					}
+				});
+			}
+			//年份
+			window.onload = function() {
+				var sel = document.getElementById('alumni_year');
+				for(var i = 2017; i >= 1970; i--) {
+					var option = document.createElement('option');
+					option.value = i;
+					var txt = document.createTextNode(i);
+					option.appendChild(txt);
+					sel.appendChild(option);
+				}
+			}
+			//获取选中行数据
+			function getSelect() {
+				var row = $('#dg').datagrid('getSelected');
+				var alumni_name = row.alumni_name;
+				var alumni_year = row.alumni_year;
+				var alumni_major = row.alumni_major;
+				var alumni_tablename = row.alumni_tablename;
+				var alumni_phone = row.alumni_phone;
+				var alumni_address = row.alumni_address;
+				var alumni_email = row.alumni_email;
+				var alumni_school = row.alumni_school;
+				var alumni_education = row.alumni_education;
+				var alumni_profession = row.alumni_profession;
+				if(row) {
+					alert('姓名:' + row.alumni_name + "\n入学年份: " + row.alumni_year);
+				}
+			}
+		</script>
+	</body>
+
+</html>

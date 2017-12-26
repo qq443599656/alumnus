@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>智能审核</title>
+			<link rel="stylesheet" type="text/css" href="../../easyui/1.3.4/themes/default/easyui.css">
+		<link rel="stylesheet" type="text/css" href="../../easyui/1.3.4/themes/icon.css">
+		<link rel="stylesheet" type="text/css" href="../../easyui/1.3.4/themes/color.css">
+		<link rel="stylesheet" type="text/css" href="../../easyui/1.3.4/themes/xyy.css">
+		<script type="text/javascript" src="../../easyui/1.3.4/jquery.min.js"></script>
+		<script type="text/javascript" src="../../easyui/1.3.4/jquery.easyui.min.js"></script>
+		<script type="text/javascript" src="../../easyui/1.3.4"></script>
+		<script type="text/javascript" src="../../easyui/1.3.4/easyloader.js"></script>
+		<script type="text/javascript" src="../../easyui/1.3.4/locale/easyui-lang-zh_CN.js"></script>
+	</head>
+
+	<body>
+		<table id="dg" class="easyui-datagrid" style="width:auto;height:auto" iconCls="icon-save" rownumbers="false" autoRowHeight="false" pagination="true" striped="true" pageSize="10" singleSelect="true">
+			<thead>
+				<tr>
+					<th data-options="field:'userloginname',width:60">姓名</th>
+					<th data-options="field:'userrealname',width:60">入学年份</th>
+					<th data-options="field:'filialeid',width:80">院系专业</th>
+					<th data-options="field:'userdepartmentid',width:80">同班同学姓名</th>
+					<th data-options="field:'userphone',width:120">联系电话</th>
+					<th data-options="field:'ad',width:120">住址</th>
+					<th data-options="field:'usercardid',width:160">邮箱</th>
+					<th data-options="field:'userroleid',width:60">学校</th>
+					<th data-options="field:'userloginnum',width:60">学历</th>
+					<th data-options="field:'hangye',width:120">行业</th>
+					<th data-options="field:'userlogindate',width:180">注册时间</th>
+					<th data-options="field:'userdate',width:200">操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>侯楠</td>
+					<td>2004</td>
+					<td>汽车工程</td>
+					<td>侯北</td>
+					<td>13525456569</td>
+					<td>陕西省西安市侯家湾</td>
+					<td>888888888@gmail.com</td>
+					<td>北京大学</td>
+					<td>博士</td>
+					<td>收破烂</td>
+					<td>2017/10/23 下午05:33:00</td>
+					<td>
+						<a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="deleteInfo()">删除</a>
+					</td>
+				</tr>
+				<tr>
+					<td>李楠</td>
+					<td>2009</td>
+					<td>计算机</td>
+					<td>侯西</td>
+					<td>13525456569</td>
+					<td>陕西省西安市侯家湾五组250号</td>
+					<td>2325188888@gmail.com</td>
+					<td>北京大学</td>
+					<td>硕士</td>
+					<td>拉大粪</td>
+					<td>2017/10/23 下午05:33:00</td>
+					<td>
+						<a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="deleteInfo()">删除</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+<script>
+		//删除按钮
+			function deleteInfo() {
+					var row = $('#dg').datagrid('getSelected');
+				$.messager.confirm('提示', '您确定要删除吗?', function(r) {
+					if(r) {
+						var rowIndex = $('#dg').datagrid('getRowIndex', row);
+						$('#dg').datagrid('deleteRow', rowIndex);
+						$.messager.alert('提示', '删除成功! ', "info");
+					}
+				});
+			}
+</script>
+	</body>
+
+</html>

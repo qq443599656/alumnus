@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<!-- 动态方法调用 -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<!-- 默认访问页面 -->
+	<package name="default" extends="struts-default" namespace="/">
+		<default-action-ref name="default" />
+		<action name="default">
+			<result>404.jsp</result>
+		</action>
+	</package>
+
+	<!-- 商品相关请求转发 -->
+	<!-- Struts2在2.5版本后添加strict-method-invocation(严格方法访问)，默认为true，不能使用动态方法调用功能，故需设为false -->
+	<!-- <package name="product" extends="struts-default" namespace="/" strict-method-invocation="false"> 
+		保存商品 <action name="product_*" class="productAction" method="{1}Product"> 
+		<result>WEB-INF/view/index.jsp</result> <result name="input">WEB-INF/view/index.jsp</result> 
+		</action> </package> -->
+
+	<!-- 配置返回json的action -->
+	<package name="jsonReturn" extends="json-default" namespace="/">
+		<action name="user_login" class="userAction" method="login">
+			<!-- 返回类型为json 在json-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="user_isUsernameOk" class="userAction" method="isUsernameOk">
+			<!-- 返回类型为json 在json-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="user_register" class="userAction" method="register">
+			<!-- 返回类型为json 在json-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="user_isEmailOk" class="userAction" method="isEmailOk">
+			<!-- 返回类型为json 在json-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="user_forgetPassword" class="userAction" method="forgetPassword">
+			<!-- 返回类型为json 在json-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="user_updatePassword" class="userAction" method="updatePassword">
+			<!-- 返回类型为json 在json-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+
+	<!-- 配置普通action -->
+	<package name="User" extends="struts-default" namespace="/">
+		<action name="user_*" class="userAction" method="{1}">
+			<result name="success">/WEB-INF/view/index.jsp</result>
+			<result name="input">/login.jsp</result>
+			<result name="invalidateOk">/login.jsp</result>
+			<result name="setOk">/updatePassword.jsp</result>
+			<allowed-methods>index,invalidateSession,userActivation,setRequestEmail</allowed-methods>
+		</action>
+	</package>
+
+
+
+	<!-- 引入资源文件 -->
+	<constant name="struts.custom.i18n.resources" value="messageResource"></constant>
+
+</struts>

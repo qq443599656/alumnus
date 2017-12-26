@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>统计信息管理</title>
+			<link rel="stylesheet" type="text/css" href="../../easyui/1.3.4/themes/default/easyui.css">
+		<link rel="stylesheet" type="text/css" href="../../easyui/1.3.4/themes/icon.css">
+		<link rel="stylesheet" type="text/css" href="../../easyui/1.3.4/themes/color.css">
+		<link rel="stylesheet" type="text/css" href="../../easyui/1.3.4/themes/xyy.css">
+		<script type="text/javascript" src="../../easyui/1.3.4/jquery.min.js"></script>
+		<script type="text/javascript" src="../../easyui/1.3.4/jquery.easyui.min.js"></script>
+		<script type="text/javascript" src="../../easyui/1.3.4"></script>
+		<script type="text/javascript" src="../../easyui/1.3.4/easyloader.js"></script>
+		<script type="text/javascript" src="../../easyui/1.3.4/locale/easyui-lang-zh_CN.js"></script>
+	</head>
+
+	<body>
+		<table id="dg" class="easyui-datagrid" style="width:auto;height:auto" iconCls="icon-save" rownumbers="false" autoRowHeight="false" pagination="true" toolbar="#tb6" striped="true" pageSize="10" singleSelect="true">
+			<thead>
+				<tr>
+					<th data-options="field:'userloginname',width:60">姓名</th>
+					<th data-options="field:'userrealname',width:60">入学年份</th>
+					<th data-options="field:'filialeid',width:80">院系专业</th>
+					<th data-options="field:'userdepartmentid',width:80">同班同学姓名</th>
+					<th data-options="field:'userphone',width:120">联系电话</th>
+					<th data-options="field:'ad',width:200">住址</th>
+					<th data-options="field:'usercardid',width:200">邮箱</th>
+					<th data-options="field:'userroleid',width:100">学校</th>
+					<th data-options="field:'userloginnum',width:60">学历</th>
+					<th data-options="field:'hangye',width:120">行业</th>
+					<th data-options="field:'userlogindate',width:180">注册时间</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>侯楠</td>
+					<td>2004</td>
+					<td>汽车工程</td>
+					<td>侯北</td>
+					<td>13525456569</td>
+					<td>陕西省西安市侯家湾</td>
+					<td>888888888@gmail.com</td>
+					<td>北京大学</td>
+					<td>博士</td>
+					<td>收破烂</td>
+					<td>2017/10/23 下午05:33:00</td>
+				</tr>
+				<tr>
+					<td>李楠</td>
+					<td>2009</td>
+					<td>计算机</td>
+					<td>侯西</td>
+					<td>13525456569</td>
+					<td>陕西省西安市侯家湾五组250号</td>
+					<td>2325188888@gmail.com</td>
+					<td>北京大学</td>
+					<td>硕士</td>
+					<td>拉大粪</td>
+					<td>2017/10/23 下午05:33:00</td>
+				</tr>
+			</tbody>
+		</table>
+		<div id="tb6" style="padding:2px;">
+				从事行业:
+			<select class="easyui-combobox" panelHeight="auto" style="width:200px;" data-options="editable:false">
+				<option value="java">Java</option>
+				<option value="c">C</option>
+				<option value="basic">Basic</option>
+				<option value="perl">Perl</option>
+				<option value="python">Python</option>
+			</select>
+			校友属性:
+			<select class="easyui-combobox" panelHeight="auto" style="width:200px;" data-options="editable:false">
+				<option value="java">Java</option>
+				<option value="c">C</option>
+				<option value="basic">Basic</option>
+				<option value="perl">Perl</option>
+				<option value="python">Python</option>
+			</select>
+			地区查询:
+			<select class="easyui-combobox" panelHeight="auto" style="width:200px;" data-options="editable:false">
+				<option value="java">Java</option>
+				<option value="c">C</option>
+				<option value="basic">Basic</option>
+				<option value="perl">Perl</option>
+				<option value="python">Python</option>
+			</select>
+			<a href="#" class="easyui-linkbutton" iconCls="icon-search">查询</a>
+		</div>
+	</body>
+
+</html>

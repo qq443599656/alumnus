@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>校友交往管理</title>
+		<link rel="stylesheet" type="text/css" href="../../easyui/1.3.4/themes/default/easyui.css">
+		<link rel="stylesheet" type="text/css" href="../../easyui/1.3.4/themes/icon.css">
+		<link rel="stylesheet" type="text/css" href="../../easyui/1.3.4/themes/color.css">
+		<link rel="stylesheet" type="text/css" href="../../easyui/1.3.4/themes/xyy.css">
+		<script type="text/javascript" src="../../easyui/1.3.4/jquery.min.js"></script>
+		<script type="text/javascript" src="../../easyui/1.3.4/jquery.easyui.min.js"></script>
+		<script type="text/javascript" src="../../easyui/1.3.4"></script>
+		<script type="text/javascript" src="../../easyui/1.3.4/easyloader.js"></script>
+		<script type="text/javascript" src="../../easyui/1.3.4/locale/easyui-lang-zh_CN.js"></script>
+	</head>
+
+	<body>
+		<table id="dg" class="easyui-datagrid" style="width:auto;height:auto" iconCls="icon-save" rownumbers="false" autoRowHeight="false" toolbar="#tb4" pagination="true" striped="true" pageSize="10" singleSelect="true">
+			<thead>
+				<tr>
+					<th data-options="field:'userloginname',width:150">活动主题</th>
+					<th data-options="field:'userrealname',width:80">发起人</th>
+					<th data-options="field:'filialeid',width:80">所属社群</th>
+					<th data-options="field:'userdepartmentid',width:200">开始时间</th>
+					<th data-options="field:'userphone',width:200">结束时间</th>
+					<th data-options="field:'ad',width:150">活动类型</th>
+					<th data-options="field:'usercardid',width:150">报名范围</th>
+					<th data-options="field:'userroleid',width:150">活动地点</th>
+					<th data-options="field:'userloginnum',width:100">活动总名额</th>
+					<th data-options="field:'hangye',width:100">每位最多报名数活动费用</th>
+					<th data-options="field:'userlogindate',width:100">活动费用</th>
+					<th data-options="field:'userdate',width:300">活动简介</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>打到特色社会主义</td>
+					<td>侯楠</td>
+					<td>文化社</td>
+					<td>2017/10/23 下午05:33:00</td>
+					<td>2017/10/23 下午22:33:00</td>
+					<td>反动</td>
+					<td>北京市</td>
+					<td>天安门广场</td>
+					<td>不限</td>
+					<td>1</td>
+					<td>免费</td>
+					<td>打到共产党</td>
+				</tr>
+			</tbody>
+		</table>
+		<div id="tb4" style="padding:2px;">
+			活动名称查询:
+			<input class="easyui-textbox" style="width:200px;height:auto">
+			<a href="#" class="easyui-linkbutton" iconCls="icon-search" style="margin-right: 30px;">查询</a>
+		</div>
+	</body>
+
+</html>
